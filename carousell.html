@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+
+
+         body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://scontent.fpnq7-3.fna.fbcdn.net/v/t39.30808-6/308717940_464702215699311_5027152372345135112_n.jpg?stp=dst-jpg_s960x960&_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=rc4YUh4N-YUQ7kNvgHfRIs_&_nc_ht=scontent.fpnq7-3.fna&oh=00_AYDOm8DFsmudi5pCOQ97VPvvMDMuUi_hWC3Hd0zFPPwxNQ&oe=67023E33");
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 0.7;
+            z-index: -1; 
+            
+            
+        }
+
+        .carousel-item img {
+            object-fit: cover;
+            height: 50vh;
+            width: 100%;
+            
+        }
+
+
+        #carouselExample{
+            width:50%;
+            margin-left: 25%;
+            margin-top: 3%;
+        }
+
+        h1{
+            text-align: center;
+            font-size: 80px;
+            margin-top: 3%;
+            font-family: 'Old English Text MT';
+            color:aliceblue;
+            -webkit-text-stroke: 2px black;
+            
+
+        }
+
+       p{
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+        margin-top: 2%;
+        font-family: 'Old English Text MT';
+        background-color: antiquewhite;
+        border-radius: 10px;
+       }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>St. Xavier's College</h1>
+    </div>
+
+    <div id="carouselExample" class="carousel slide">
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/St.Xaviers_College_%28Bombay%29_Chapel.jpg/640px-St.Xaviers_College_%28Bombay%29_Chapel.jpg" class="d-block " alt="image of html form">
+                <p>Chapel</p>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.hindustantimes.com/rf/image_size_640x362/HT/p2/2016/02/04/Pictures/xavier-s-college_f8d8ecaa-cb43-11e5-9175-b0581234e99b.JPG" class="d-block " alt="image of html form">
+                <p>Library</p>
+            </div>
+            <div class="carousel-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/St.xaviers_woods_aerial.jpg" class="d-block " alt="image of html form">
+                <p>Woods</p>
+            </div>
+            <div class="carousel-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyE4u1aF5NM8zsuyA-Qf5MlRA-l6IuLAmShA&s" class="d-block " alt="image of html form">
+                <p>College Hall</p>
+            </div>
+        </div> 
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+
+    
+</body>
+</html>
