@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+			<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+
+	<style type="text/css">
+		
+		#buttons{
+			display: flex;
+			justify-content: center;
+			flex-direction: row;
+			gap: 5%;
+			margin-top: 10%;
+
+		}
+
+		p{
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			height: 10%;
+			width: 100%;
+			font-size: 20px;
+			background-color: #f2f2f2;
+		}
+
+		button{
+			height: 5%;
+			font-size: 25px;
+		}
+
+		
+
+
+	</style>
+</head>
+<body>
+
+	<div id="buttons">
+		<button id="even" title="Click to print even numbers between 1 and 50">Print Even</button>
+		<button id="odd" title="Click to print odd numbers between 1 and 50">Print Odd</button>
+	</div>
+
+	<p>
+		
+	</p>
+
+
+	<script type="text/javascript">
+		function nos(x){
+			let even="";
+			let odd="";
+
+			for(let i=1;i<51;i++){
+				if(i%2==0){
+					even+= i + " ";
+
+				}
+				else{
+					odd += i+" "
+				}
+			}
+
+			if(x){
+				$('p').html(even);
+			}
+			else{
+				$('p').html(odd);
+			}
+		}
+
+
+		$(document).ready(function(){
+			$('#even').click(function(){
+				nos(1);
+			})
+
+			$('#odd').click(function(){
+				nos(0);
+			})
+		})
+	</script>
+</body>
+</html>

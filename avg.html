@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+
+	<h1>
+		Calculate Your Average Marks
+	</h1>
+
+	<div>
+		<form>
+			<div>
+				<label for="sub">Subject name: </label>
+				<input type="text" name="sub" id="sub" required>
+			</div>
+
+			<div>
+				<label for="o">Obtained Marks: </label>
+				<input type="number" name="o" id="o" required>
+			</div>
+
+			<div>
+				<label for="t">Total Marks: </label>
+				<input type="number" name="t" id="t" required>
+			</div>
+
+			<input type="submit" value="Add Subject">
+		</form>
+
+
+		<button id="cal">Calculate</button>
+	</div>
+
+	<div id="summary">
+		
+	</div>
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			let obtained=0;
+			let total = 0;
+			let c=0;
+			$(document).on('submit','form',function(e){
+				e.preventDefault();
+
+				let sub = $('#sub').val();
+				let o = parseInt($('#o').val());
+				let t = parseInt($('#t').val());
+
+				$('#sub').val("");
+				$('#o').val("");
+				$('#t').val("");
+
+				obtained += o;
+				console.log(o,t)
+				total += t;
+				c++;
+				console.log(o,t,c);
+
+				$('#summary').append(`<p>${sub} - ${o}/${t}`)
+
+			})
+
+			$(document).on('click','#cal',function(){
+				
+				let avg = obtained/c;
+				let p = (obtained / total) *100;
+
+				console.log(o,t,avg,p)
+
+				$('#summary').append(`
+
+										<p> Obtained: ${obtained}<p>
+										<p> Total: ${total}</p>
+										<p> Average Marks: ${avg}</p>
+										<p> Percentage: ${p} </p>
+
+
+					`)
+
+			})
+		})
+	</script>
+</body>
+</html>

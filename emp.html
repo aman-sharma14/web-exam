@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+		<!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
+
+</head>
+<body>
+
+	<h1>Employee Details</h1>
+
+	<table border="1" cellspacing="0">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>DOB</th>
+				<th>Dept no: </th>
+			</tr>
+		</thead>
+
+		<tbody>
+
+		</tbody>
+	</table>
+
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$.ajax({
+				url: "emp.xml",
+				type: "GET",
+				dataType : "xml",
+				success: function(xml){
+
+					$(xml).find('employee').each(function(){
+
+						let id = $(this).find('id').text();
+						let name = $(this).find('name').text();
+						let email = $(this).find('email').text();
+						let dob = $(this).find('dob').text();
+						let deptno = $(this).find('deptno').text();
+						
+
+						$('tbody').append(`
+										<tr>
+											<td>${id}</td>
+											<td>${name}</td>
+											<td><a href="mailto:${email}">${email}</a></td>
+											<td>${dob}</td>
+											<td>${deptno}</td>
+										</tr>
+
+									`);
+					})
+				},
+				error:function(){
+					console.log('error');
+				}
+			})
+		})
+	</script>
+</body>
+</html>

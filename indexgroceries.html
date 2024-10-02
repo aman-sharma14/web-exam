@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practical</title>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="formEl">
+		<form id="form">
+			<div class="field">
+				<label for="item">Enter Item: </label>
+				<input type="text" name="item" id="item">
+
+			</div>
+
+			<div class="field">
+				<label for="qty">Quanity: </label>
+				<input type="number" name="qty" id="qty">
+				
+			</div>
+
+			<div class="field">
+				<input type="submit" name="submit" value="Submit">
+			</div>
+		</form>
+
+
+	</div>
+
+	<div id="msg">
+		
+	</div>
+
+
+	<div id="itemsList">
+		<div class="item">
+			<p>Milk</p>
+			
+			<input type="number" name="itemQty" class="itemQty" >
+			<button class="update">Update Quantity</button>
+
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

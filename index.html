@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+	<title></title>
+
+	<style>
+		h1,p{
+			text-align: center;
+
+		}
+
+		p{
+			font-size: 30px;
+		}
+
+		#inputs,#buttons{
+			display: flex;
+			justify-content: center;
+			flex-direction: row;
+
+			
+		}
+		input{
+				height: 50px;
+				width: 50px;
+				border-radius: 5px;
+				margin: 2%;	
+				font-size: 30px;
+		}
+
+		button{
+			height: 40px;
+			width: auto;
+			border-radius: 5px;
+			margin: 2%;
+			font-size: 25px;
+		}
+
+	
+	</style>
+</head>
+
+
+<body>
+
+	<h1>Calculator</h1>
+
+	<div id="inputs">
+		<input type="number" name="num1" id="num1">
+		<input type="number" name="num2" id="num2">
+	</div>
+
+	<p>
+		
+	</p>
+
+
+	<div id="buttons">
+		<button id="add">Add</button>
+		<button id="sub">Subtract</button>
+		<button id="multiply">Multiply</button>
+		<button id="div">Divide</button>
+	</div>
+
+
+	<script type="text/javascript">
+
+		function ops(x){
+				let a = parseInt($('#num1').val());
+				let b = parseInt($('#num2').val());
+
+				let ans;
+            switch (x) {
+                case 1:
+                    ans = a + b;
+                    break;
+                case 2:
+                    ans = a - b;
+                    break;
+                case 3:
+                    ans = a * b;
+                    break;
+                case 4:
+                    ans = b !== 0 ? a / b : 'Cannot divide by zero';
+                    break;
+                default:
+                    ans = 'Invalid operation';
+            }
+
+				$('p').text(ans);
+
+
+
+			}
+		
+		$(document).ready(function(){
+			$('#add').click(function(){
+				ops(1);
+			});
+
+			$('#sub').click(function(){
+				ops(2);
+			});
+
+			$('#multiply').click(function(){
+				ops(3);
+			});
+
+			$('#div').click(function(){
+				ops(4);
+			});
+		})
+	</script>
+
+</body>
+</html>
