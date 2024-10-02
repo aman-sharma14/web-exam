@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        html,body{
+            height: 100%;
+            margin: 0;
+            font-family: "Lato", sans-serif;
+        }
+
+        h1 {
+            margin: 0; 
+            padding-bottom: 10px; 
+            font-size: 30px; 
+        }
+
+        p {
+            margin: 10px 0 20px 0; 
+            font-size: 16px; 
+        }
+
+        #login{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            max-width: 400px;
+            padding: 50px;
+            font-size: 18px;
+            border: 2px solid black ;
+            background-color: #2b2738;
+            border-radius: 15px;
+            color: #FEFEFE;
+        }
+
+        form div input:not(#chkshow,#create){
+            width:85%;
+            border: 2px solid #c4c4c4;
+        }
+        form div input:not(#chkshow){
+            height: 40px;
+            border-radius: 8px;
+            outline: none;
+            padding: 0 30px;
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+        }
+
+        #chkshow{
+            justify-self: center;
+            width:15px;
+            height: 15px;
+        }
+
+        .failure-icon{
+            color: red;
+        }
+
+        #sub{
+            display: flex;
+            justify-content: center;
+            margin-top: 4%;
+        }
+
+        #chk{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-size: 14px;
+            margin-top: 2%;
+        }
+
+        img{
+            height: 40px;
+            width: 40px;
+        }
+
+        #apple{
+            height: 40px;
+            width: 32.53px;
+        }
+
+        #buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width:197px;
+            height:60px;
+            margin: 10px;  
+            border: 2px solid #FEFEFE;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 10px;
+            color:#FEFEFE;
+            background-color: #2b2738;
+        }
+
+        button img {
+            margin-right: 8px; 
+        }
+
+
+
+
+        #create{
+            width:100%;
+            background-color: #6E54B5;
+            border: 0px solid #6E54B5;
+            font-size: 24px;
+            color:#FEFEFE;
+            font-family: 'Montserrat', sans-serif;
+            
+        }
+
+        input:hover,button:hover,a:hover{
+            opacity: 0.8;
+        }
+
+        form div input:not(#chkshow,#create){
+            background-color: #464058;
+            color:#afafaf;
+            border: none;
+        }
+
+        input::placeholder{
+            color:#FEFEFE;
+            opacity: 0.5;
+            font-size: 15px;
+        }
+
+        .success-icon{
+            color:rgb(38, 208, 36);
+        }
+
+        a,a:visited{
+            color:#b9a0ff;
+        }
+
+        input{
+            margin-bottom: 2%;
+        }
+
+        /* #a{
+            color: #464058;
+        } */
+    </style>
+
+
+
+    
+</head>
+<body>
+
+        <div id="login">
+            
+            <form action="prac8.php" method="post" onsubmit="return validatefields();">
+
+                <h1>PHP Form Demo</h1>
+                <!-- <p>Already have an account? <a href="#">Login</a></p> -->
+
+                <div class="field">
+                    <label for="user_name">Username <i class="fas fa-user"></i></label>
+                    <input type="text" id="user_name" name="user_name"required placeholder="username " style="margin-top: 2%;" onkeyup="validateusr();">
+                    <small></small>
+                </div>
+    
+                <br>
+    
+                <div class="field">
+                    <label for="mail">Email <i class="fa-regular fa-envelope"></i>  </label>
+                    <input type="email" id="mail" name="mail" required placeholder="email" style="margin-top: 2%;" onkeyup="validatemail();">
+                    <small></small>
+                </div>
+    
+                <br>
+    
+                <div class="field">
+                    <label for="dob">Date of Birth: </label>
+                    <input type="date" id="dob" name="dob" required style="margin-top: 2%;">
+                    <small></small>
+                </div>
+                
+                <!-- <div id="chk">
+                    <label for="chkshow" style="font-size: 14px;">Show Password </label>
+                    <input type="checkbox" id="chkshow" onclick="togglepwd()">
+                </div> -->
+                
+                <br><br>
+    
+                <div id="sub">
+                    <input type="submit" id="create" value="Create  Account" >
+                </div>
+
+                <!-- <p style="opacity: 0.6; margin-top: 15px;">----------------------  Or sign up with  ---------------------</p>
+
+                <div id="buttons">
+                    <button><img src="google.png"> Google</button>
+                    <button><img id="apple" src="apple.png"> Apple</button>
+                </div> -->
+                
+            </form>
+        </div>
+
+       <script src="login.js">
+            function togglepwd(){
+                var user_pass = document.getElementById("txtpwd")
+                var toggle_pass = document.getElementById('chkshow')
+
+                if(toggle_pass.checked){
+                    user_pass.type = "text"
+                }
+                else{
+                    user_pass.type = "password"
+                }
+            }
+
+            function validateusr(){
+                var user_name =  document.getElementById('user_name');
+                var er = user_name.nextElementSibling;
+
+                if(user_name.value.trim() === "" || user_name.value.trim().length < 5){
+                    er.innerHTML = "<i class='fa-solid fa-circle-exclamation failure-icon'></i> Username must be minimum 5 characters."
+                }
+                else{
+                    er.innerHTML = '<i class="fa-solid fa-circle-check success-icon"></i>'
+                }
+            }
+
+            function validatemail(){
+                var mail =  document.getElementById('mail');
+                var er = mail.nextElementSibling;
+                var email_pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ ;
+
+                if(mail.value.trim() === "" || !email_pattern.test(mail.value.trim())){
+                    er.innerHTML = "<i class='fa-solid fa-circle-exclamation failure-icon'></i> Enter valid email."
+                }
+                else{
+                    er.innerHTML = '<i class="fa-solid fa-circle-check success-icon"></i>'
+                }
+            }
+
+            function validatefields(){
+                var isValid = true;
+                var user_name =  document.getElementById('user_name');
+                var email_pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ ;
+                var email = document.getElementById('mail');
+                
+                if (user_name.value.trim() === "" || user_name.value.trim().length < 5){
+                    isValid=false;
+                }
+                
+                if (email.value.trim() === "" || !email_pattern.test(email.value.trim())){
+                    isValid=false;
+                }
+
+                return isValid;
+            }
+       </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
