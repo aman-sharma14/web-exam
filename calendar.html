@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calendar</h1>
+
+    <table border="1" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+            <tr>
+                <th></th>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <script>
+        
+        let events = [2,3,31];
+        let links = [
+            "www.gandhijayanti.com", "www.navratri.com", "www.diwali.com"
+        ]
+        // let events = {}
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     let html = ""
+        //     let day =1;
+        //     for(let week=1; week<6; week++){
+
+                
+        //         html += `<tr>`;
+                
+        //         for(let i=1; i<8;i++){
+                   
+                    
+        //             if((week ==1 && (i==1 || i==2 || i==2)) || day===32){
+        //                 html += `<td> </td>`;
+        //             }
+        //             else{
+        //                 html += `<td title='day'> ${day} </td>`
+        //                 console.log(day)
+        //                 day++;
+        //             }
+        //         }
+
+        //         html += `</tr>`;
+        //     }
+
+        //     document.querySelector('tbody').innerHTML = html;
+            
+        // })
+
+        $(document).ready(function(){
+            let html = ""
+            let day =1;
+            for(let week=1; week<6; week++){
+
+                
+                html += `<tr>`;
+                
+                for(let i=1; i<8;i++){
+                   
+                    
+                    if((week ==1 && (i==1 || i==2 || i==2)) || day===32){
+                        html += `<td> </td>`;
+                    }
+                    else{
+
+                       if(events.includes(day)){
+                        let i = events.indexOf(day);
+                        html += `<td title='day'> <a href=${links[i]}>${day}</a> </td>`
+                        console.log(day)
+                        day++;
+                       }
+                       else{
+                        html += `<td title='day'> ${day} </td>`
+                        console.log(day)
+                        day++;
+                       }
+                        
+                    }
+                }
+
+                html += `</tr>`;
+            }
+
+            $('tbody').html(html);
+        })
+    </script>
+</body>
+</html>
